@@ -8,11 +8,18 @@ class TestController extends Controller
 {
     //
 
-    public function showMessage(){
+
+    function getData()
+    {
+        return ['data' => ['test' => 'yes']];
+    }
+    public function showMessage()
+    {
         return "My Message";
     }
 
-    public function showSecondMessage(){
+    public function showSecondMessage()
+    {
         return "My Second Message";
     }
 }

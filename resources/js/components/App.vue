@@ -1,5 +1,13 @@
 <script>
+
+import FetchData from "./FetchData.vue"
+import TestApi from "./TestApi.vue"
+
 export default {
+  components:{
+    FetchData,
+    TestApi
+  },
   data() {
     return {
       message: 'Hello World!',
@@ -21,32 +29,13 @@ export default {
 </script>
 
 <template>
-  <!--
-    Note we don't need .value inside templates because
-    refs are automatically "unwrapped" in templates.
-  -->
-  <h1>{{ message }}</h1>
-  <h1> message </h1>
-  <h1>{{ message }}</h1>
-  <h1>{{ message }}</h1>
-  <h2>{{ anotherMessage }}</h2>
-
-  <!--
-    Bind to a method/function.
-    The @click syntax is short for v-on:click.
-  -->
-  <button @click="reverseMessage">Reverse Message</button>
-
-  <!-- Can also be an inline expression statement -->
-  <button @click="appendEM">Append "!"</button>
-
-  <!--
-    Vue also provides modifiers for common tasks
-    such as e.preventDefault() and e.stopPropagation()
-  -->
-  <a href="https://vuejs.org" @click.prevent="notify">
-    A link with e.preventDefault()
-  </a>
+  <div>
+    <TestApi name="this is a prop"></TestApi>
+    <h1>{{ message }}</h1>
+    <button @click="reverseMessage">Reverse Message</button>
+    <button @click="appendEM">Append "!"</button>
+    <FetchData></FetchData>
+  </div>  
 </template>
 
 <style>
